@@ -1,0 +1,109 @@
+<?php 
+header( 'Cache-Control: max-age=604800' );
+	//error_reporting(0);
+	require_once("adminPanel/lib/session.php"); 
+	 $page = isset($_SERVER['QUERY_STRING']) ? rtrim($_SERVER['QUERY_STRING'], '/') : null;
+	 $exp = explode('/', rtrim($_SERVER['PHP_SELF'], '/'));
+	 $exp = end($exp);
+	 	 
+	function getMenu($position, $class = null, $id = null){
+				global $database;
+				$menus = $database->SelectData("SELECT * FROM ".TBL_MENU." WHERE position = '$position' AND parent_id = '0' ORDER BY sequenceno");
+				if($id != null)
+				echo '<ul class="'.$class.'" id="'.$id.'">';
+				else
+				echo '<ul class="'.$class.'">';
+				$i = 0;
+				foreach($menus as $menu){
+						
+					if(($menu->template != '0') && ($menu->template != '1') ){
+					    if($menu->template == "blog/index"){
+					        $link = "blog/";
+					    }else{
+					        $link = $menu->template.'.php';
+					    }
+					}else{
+						$link = 'content.php?'.$menu->slug;
+					}
+					if($link == 'content.php?home')
+					{
+						$link = "";
+					}
+					global $page, $exp;
+					static $i = 0;
+					if($page == $menu->slug)
+						$select = "class='selected'";
+					else if($exp == $menu->template.'.php')
+							$select = "class='selected'";
+					else if($exp == 'index.php' && $i == 0){
+								$select = "class='selected'";
+								++$i;
+						}
+					else{
+						$select = '';
+					}
+					
+						
+					//$return .= '<li class="dropdown" '.$select.'><a class="dropbtn" href="'.site_url.'/'.$link.'" target="'.$menu->target.'">'.$menu->mname.'<ul class="dropdown-content"><li><a href="">drop down menu</a></li></ul></a></li>';
+
+$sub_menus = $database->SelectData("SELECT * FROM ".TBL_MENU." WHERE parent_id = '$menu->id' and status='1' ORDER BY sequenceno");
+
+?>
+<li class="dropdown"><a class="dropbtn" href="<?=site_url;?>/<?=$link;?>" target="<?=$menu->target;?>"><?=$menu->mname;?></a>
+<?php
+if($class != "footer_menu"){
+if(count($sub_menus)>0)
+{
+?>
+<ul class="dropdown-content">
+<?php
+foreach($sub_menus as $submenu){
+?>
+    <li><a href="<?=site_url;?>/content.php?<?=$submenu->slug;?>"><?php echo $submenu->mname;?></a></li>
+<?php } ?>
+</ul>
+<?php }
+} ?>
+</li>
+<?php
+					$i++;
+				}
+				echo '<li id="box"><a href="#">&nbsp;</a></li></ul>';
+				//echo $return;
+		}		
+	
+	
+	
+	if((isset($page) && $page != null) || ($exp && $exp != 'index.php' && $exp !='userarea.php' && $exp!='free-trail.php'))
+	{
+		if(isset($page) && $page != null )
+			$menu = $database->get(TBL_MENU, $page, 'slug');
+		else{
+				$exp = explode('.', $exp);
+				$page = $exp[0]; 
+				$menu = $database->get(TBL_MENU, $page, 'slug');
+			}
+			
+		if(count($menu) <= 0 )
+		{	ob_start();
+			header("HTTP/1.0 404 Not Found");
+			header('Location: 404.php');
+		}
+
+			$mid = $menu[0]->id;
+			$datas = $database->SelectData("SELECT * FROM ".TBL_CONTENT." WHERE m_id = $mid");	
+			$title = isset($datas[0]->title) ? $datas[0]->title : 'Clipping Path Creations';
+			$keyword = isset($datas[0]->keyword) ? $datas[0]->keyword : null;
+			$keydes = isset($datas[0]->kdes) ? $datas[0]->kdes : null;
+			$ph = $datas[0]->ph;
+			$content = htmlentities($datas[0]->article);
+	//	$content =$datas[0]->article;
+			$img = $datas[0]->img;
+			$imppositon = $datas[0]->img_p;
+			$publish = $datas[0]->status;
+	}else{
+		$title = 'Clipping Creations India: Best Clipping Path Service Provider';
+		$keyword = 'clipping path service, clipping path services, clipping path service provider, clipping path service company, best clipping path service, clipping path service reviews, remove background from image, ecommerce photo editing, photoshop services';
+		$keydes = '120 Plus Photoshop experts of CCI provide professional clipping path service, photo background remove service, and other popular photo editing services more than 10 years. Clipping path service starting from as low as 35¢..';
+	}
+?>

@@ -1,0 +1,13 @@
+add fund e charge cut
+
+Chart (done)
+
+gigs to services (done)
+
+category delete problem (category delete korle service show te error dey)
+
+Advertise add
+
+featured gigs show first (done)
+
+payment er uporer favicon and tab favicon (done but home er upor ashtese na)

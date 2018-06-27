@@ -1,0 +1,4 @@
+laravel validation
+check image extensions
+remove previous image from server
+update that row

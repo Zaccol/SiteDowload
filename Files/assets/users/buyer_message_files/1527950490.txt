@@ -1,0 +1,36 @@
+1. learn vue.js
+
+2. learn github
+
+3. do every project using github
+
+4. learn about hosting from Muaz
+
+5. after learning vue.js, make a vue.js application(without laravel) & save to git
+
+6. learn about freelancing stuffs from fahim
+
+-> Learn Laravel Mix.
+
+
+Side by Side:
+
+1. do freelancing 
+
+2. Learn Python
+
+3. do problem solving with python
+
+4. learn web using python 
+
+5. Write down problems u see as opportunity for start up
+
+6. Australia project
+
+7. UK project
+
+Later:
+
+1. Learn Django
+
+2. Learn Machine Learning very later

@@ -1,0 +1,104 @@
+<?php require_once("config.php"); ?>
+<!DOCTYPE html>
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
+<html lang="en">
+<head>
+    <!--google analytics code-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86833309-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-86833309-1');
+</script>
+<!--End google analytics code-->
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="msvalidate.01" content="CAB3752085FE8A95830F3DB374BDC8C6" />
+<title><?php 
+$suburl=substr($_SERVER[REQUEST_URI],1);
+if($suburl=="services.php")
+{
+	echo 'Services | Clipping Path service | Remove Image Background | Photo editing';
+}
+else
+{
+echo ($title) ? $title : 'Clipping Path Service | Clipping Creation India'; 
+}
+?> </title>
+<meta name="keywords" content="<?php if($keyword==''){echo 'clipping path,photo background remove,photo retouching,color correction,photo manipulation,neck joint';}else{echo $keyword;} ?>"  />
+<meta name="description" content="<?php if($keydes==''){echo 'CCI providing quality clipping path service, Photoshop masking, drop shadow, retouching, image manipulation, raster to vector and others photo editing services';}else{echo $keydes;} ?>" />
+<link rel="canonical" href="https://clippingcreationsindia.com/"/>
+<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="stylesheet" type="text/css" href="<?php echo site_url; ?>/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo site_url; ?>/css/template.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo site_url; ?>/css/bootstrap-responsive.min.css" />
+<script type="text/javascript" src="js/jquery.js" ></script>
+<link href="css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.skitter.min.js"></script>
+<!--gplus integration-->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!--facebook integration-->
+<!--<div id="fb-root"></div>-->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script>
+    $(document).ready(function(){
+        var maincontent = $('#content-views').text();
+        
+       $('#content-views').html(maincontent);
+    });
+    
+</script>
+</head>
+<body>
+    <div itemscope itemtype="http://schema.org/Product" class="wrapper">
+	<div class="head_wrap">
+            <div itemprop="brand" itemscope itemtype="http://schema.org/Brand" class="row">
+        	<div class="logo float_left ">
+            	<a href="https://clippingcreationsindia.com"><img itemprop="logo" src="https://clippingcreationsindia.com/images/logo.png" class="img-responsive" alt="clipping path logo"/></a>
+            </div>
+            <div class="cell float_right ">
+                <p itemprop="name" class="headertext">Clipping Creations India</p>
+            	<p class="headertext">Phone: +44-7980403784</p>
+                <p class="headertext">info@clippingcreationsindia.com</p>
+            </div>
+            	<div class="clr"></div>
+        </div>
+    </div>
+	<div class="menu-responsive" data-href=".menu_wrap">
+			<div class="row">
+				<div class="float_left">Navigation</div>
+				<div class="float_right">
+				<a href="#menu" onclick="toggleMenu()"><img src="img/menu.png" alt="MENU" /></a>
+				</div>
+				<div class="clr"></div>
+			</div>
+	</div>
+	
+	<script>
+	    function toggleMenu() {
+	        alert('Responsive menu icon is clicked');
+	    }
+	</script>
+			
+    <div class="menu_wrap">
+    	<div class="row">
+			
+        	<div id="menu">
+            	<?php getMenu('top', 'Lamp'); ?>
+            </div>
+        </div>
+    </div>

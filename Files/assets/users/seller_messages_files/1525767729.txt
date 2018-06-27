@@ -1,0 +1,85 @@
+      $files = $request->file('images');
+      // return $images;
+      // taking JSON 'tagsArr' and converting into PHP 'tagsArr' arrays...
+      $tagsArr = json_decode($request->tags);
+
+      $fileExtErr = 'no_error';
+      // $fileCountErr = 'no_error';
+      $allowedExts = array('jpg', 'png', 'jpeg');
+      $descriptionErr = 'available';
+      $introToBuyerErr = 'available';
+      $tagsErr = 'filled';
+
+      $rules = [
+        'serviceTitle' => 'required',
+        'price' => 'required|numeric',
+        'category' => 'required',
+        'maxDaysToComplete' => 'required|numeric'
+      ];
+
+      if($request->description == '<br>') {
+        $descriptionErr = 'not_available';
+      }
+      if($request->introToBuyer == '<br>') {
+        $introToBuyerErr = 'not_available';
+      }
+      if(empty($tagsArr)) {
+        $tagsErr = 'blank';
+      }
+      // if(sizeof($files) > 3) {
+      //   $fileCountErr = 'error';
+      // }
+      // if validation fails for file extension then set $fileExtErr
+      // to true...
+      if(!empty($files)) {
+          foreach($files as $file) {
+              $ext = $file->getClientOriginalExtension();
+              if(!in_array($ext, $allowedExts)) {
+                  $fileExtErr = 'error';
+                  break;
+              }
+          }
+      }
+
+      $validator = Validator::make($request->all(), $rules);
+      // Validation fails condition...
+      if($validator->fails() || $descriptionErr == 'not_available' || $introToBuyerErr=='not_available' || $tagsErr == 'blank' || $fileExtErr == 'error') {
+        // adding an extra field 'error'...
+        $validator->errors()->add('error', 'true');
+        if($descriptionErr == 'not_available') {
+          $validator->errors()->add('description', 'Description field required');
+        }
+        if($introToBuyerErr == 'not_available') {
+          $validator->errors()->add('introToBuyer', 'Introductions to buyer field required');
+        }
+        if($tagsErr == 'blank') {
+          $validator->errors()->add('tags', 'Tags field required');
+        }
+        if($fileExtErr == 'error') {
+            $validator->errors()->add('files', 'uploaded files must be jpg/jpeg/png files');
+        }
+        // if($fileCountErr == 'error') {
+        //     $validator->errors()->add('fileCount', 'Maximum 3 images can be uploaded!');
+        // }
+        return response()->json($validator->errors());
+      }
+
+      $service = new Service;
+      $service->service_title = $request->serviceTitle;
+      $service->price = $request->price;
+      $service->category_id = $request->category;
+      $service->max_days = $request->maxDaysToComplete;
+      $service->description = $request->description;
+      $service->intro_to_buyer = $request->introToBuyer;
+      $service->save();
+
+      for ($i=0; $i < count($tagsArr) ; $i++) {
+        $tag = new Tag;
+        $tag->service_id = $service->id;
+        $tag->name = $tagsArr[$i];
+        $tag->save();
+      }
+
+      return 'success';
+      // $tagsArr = json_decode($request->tags);
+      // return $tagsArr[0];

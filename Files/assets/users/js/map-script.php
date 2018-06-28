@@ -23,7 +23,7 @@ function gMap () {
 	if ($('.google-map').length) {
         $('.google-map').each(function () {
         	// getting options from html
-        	var Self = $(this); 
+        	var Self = $(this);
         	var mapName = Self.attr('id');
         	var mapLat = Self.data('map-lat');
         	var mapLng = Self.data('map-lng');
@@ -86,7 +86,7 @@ function gMap () {
 			            {
 			                "visibility": "simplified"
 			            }
-			            
+
 			        ]
 			    },
 			    {
@@ -142,34 +142,34 @@ function gMap () {
                     var html;
                     if (index[2]) {
                         html = index[2];
-                    };                    
+                    };
                     if (!index[3]) {
                         index[3] = iconPath;
                     };
-            
+
                     map.addMarker({
-                        icon: index[3],                        
+                        icon: index[3],
                         lat: index[0],
                         lng: index[1],
                         infoWindow: {
                           content: html
                         }
-                    });   
+                    });
 
                 });
         	}
-        });  
+        });
 	};
 }
 
 
 
-// Instance of fuction while Document ready event	
+// Instance of fuction while Document ready event
 jQuery(document).ready(function () {
 	(function ($) {
 		gMap();
-        
-        
+
+
 	})(jQuery);
 });
 

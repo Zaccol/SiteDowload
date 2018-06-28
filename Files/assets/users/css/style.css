@@ -30,9 +30,8 @@ h5,
 h6 {
     margin: 0 0 15px;
     font-weight: 600;
-    color:#373737;
+    color: green;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 body {
@@ -6752,7 +6751,7 @@ Content
     min-height: 60px;
     padding-top:20px;
     font-size: 21px;
-    color: black;
+    color: green;
     font-weight: 700;
 }
 .widget-content{

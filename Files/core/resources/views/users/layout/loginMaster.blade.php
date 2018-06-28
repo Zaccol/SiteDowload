@@ -37,7 +37,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
       <script src="{{asset('assets/users/js/multi-item-slide.js')}}"></script>
       <script src="{{asset('assets/admin/js/sweetalert.js')}}"></script>
-      
+
       @stack('styles')
       @stack('scripts')
       @stack('nic-editor-scripts')
@@ -328,15 +328,7 @@
       <script src="{{asset('assets/users/js/marquee.js')}}"></script>
       <!--Main js file load-->
       <script src="{{asset('assets/js/main.js')}}"></script>
-      <script>
-         var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-         hljs.initHighlightingOnLoad();
-         hljs.configure({useBR: true});
-         jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
-         jQuery('#raindrops-green').raindrops({color:'#2ecc71 ',canvasHeight:5});
-
-      </script>
       <script>
          $(document).ready(function() {
 
@@ -365,6 +357,6 @@
                     swal("Sorry!", "{{ session('alert') }}", "error");
                 });
         </script>
-      @endif      
+      @endif
    </body>
 </html>

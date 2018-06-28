@@ -64,13 +64,8 @@
               ============= Raindrops Effect =============
                =================================*/
 
-                        var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-                        
-                        hljs.initHighlightingOnLoad();
-                        hljs.configure({useBR: true});
-                        jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
-                        jQuery('#raindrops-red').raindrops({color:'#681b3f',canvasHeight:5});
-                        jQuery('#raindrops-green').raindrops({color:'#3498db',canvasHeight:5});
+
+
 
               /*================================
               ============ Lightcase =============

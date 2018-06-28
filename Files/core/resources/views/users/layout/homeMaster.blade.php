@@ -402,15 +402,6 @@
       <!--Main js file load-->
       <script src="{{asset('assets/js/main.js')}}"></script>
       <script>
-         var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-
-         hljs.initHighlightingOnLoad();
-         hljs.configure({useBR: true});
-         jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
-         jQuery('#raindrops-green').raindrops({color:'#2ecc71 ',canvasHeight:5});
-
-      </script>
-      <script>
          $(document).ready(function() {
 
 

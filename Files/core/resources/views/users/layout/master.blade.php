@@ -53,35 +53,7 @@
    <body  data-spy="scroll">
       {!! $gs->comment_script !!}
       <!-- End Preload -->
-      <div class="animation-element">
-         <!-- End Pre-Loader -->
-         <!--support bar  top start-->
-         <div class="support-bar-top wow slideInLeft" data-wow-duration="2s" id="raindrops-green">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                    <div class="contact-info">
-                       <span style="color:white;margin-right:10px;"><i class="fa fa-envelope email" aria-hidden="true"></i> {{$gs->email}}</span>
-                       <span style="color:white;"><i class="fa fa-phone" aria-hidden="true"></i> {{$gs->phone}}</span>
-                    </div>
-                  </div>
-                  <div class="col-md-6 text-right bounceIn">
-                     <div class="contact-admin">
-                        @guest
-                        <a href="{{route('login')}}"><i class="fa fa-user"></i> LOGIN </a>
-                        <a href="{{route('register')}}"><i class="fa fa-user-plus"></i> REGISTER</a>
-                        @endguest
-                        <div class="support-bar-social-links">
-                          @foreach ($socials as $social)
-                            <a href="{{$social->url}}"><i class="fa fa-{{$social->fontawesome_code}}" aria-hidden="true"></i></a>
-                          @endforeach
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
       <!--support bar  top end-->
       <!--main menu section start-->
       <nav class="main-menu wow slideInRight" data-wow-duration="2s">
@@ -93,24 +65,20 @@
                   </div>
                </div>
 
-              <div class="col-md-offset-1 col-md-3 col-xs-8 col-xs-offset-2 search-bar">
-                <form class="" action="{{route('users.searchServices')}}" method="get">
-                   <input placeholder="Search Services Here..." class="form-control" type="text" name="searchTerm" value="">
-                </form>
-             </div>
 
-               <div class="col-md-5 text-right">
+
+               <div class="col-md-9 text-right">
                   <ul id="header-menu" class="header-navigation buyer-dropdown">
                      <li><a href="{{route('users.home')}}">Home</a></li>
                      {{-- <li><a href="{{route('inbox')}}">Inbox</a></li> --}}
                      @auth
                      <li>
                         <a class="page-scroll" href="#">
-                        Buyer <i class="fa fa-angle-down"></i>
+                        Achats <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="mega-menu mega-menu1 mega-menu2 ">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('buyer.myShopping')}}">My Shopping</a>
+                              <a class="page-scroll" href="{{route('buyer.myShopping')}}">contrats achetés</a>
                            </li>
                         </ul>
                      </li>
@@ -118,13 +86,13 @@
                      @auth
                      <li>
                         <a class="page-scroll" href="#">
-                        Seller <i class="fa fa-angle-down"></i>
+                        annonces <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-2">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('services.create')}}">Sell a service</a>
-                              <a class="page-scroll" href="{{route('services.index')}}">Manage Services</a>
-                              <a class="page-scroll" href="{{route('seller.manageSales')}}">Manage Sales</a>
+                              <a class="page-scroll" href="{{route('services.create')}}">Créer une annonce</a>
+                              <a class="page-scroll" href="{{route('services.index')}}">Gérer mes annonces</a>
+                              <a class="page-scroll" href="{{route('seller.manageSales')}}">contrats vendu</a>
                            </li>
                         </ul>
                      </li>
@@ -150,10 +118,10 @@
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
                               <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profile</a>
-                              <a class="page-scroll" href="{{route('addFund')}}">Add Fund</a>
-                              <a class="page-scroll" href="{{route('withdrawMoney')}}">Withdraw Money</a>
-                              <a class="page-scroll" href="{{route('editProfile')}}">Edit Profile</a>
-                              <a class="page-scroll" href="{{route('editPassword')}}">Change Password</a>
+                              <a class="page-scroll" href="{{route('addFund')}}">Créditer mon compte</a>
+                              <a class="page-scroll" href="{{route('withdrawMoney')}}">Récuperer mes crédits</a>
+                              <a class="page-scroll" href="{{route('editProfile')}}">éditer profil</a>
+                              <a class="page-scroll" href="{{route('editPassword')}}">modifier mot de passe</a>
                               <a style="cursor:pointer;" class="page-scroll" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                  @csrf
@@ -317,23 +285,7 @@
                      </div>
 
                      {{-- Featured Gigs slider --}}
-                     <div class="widget-content">
-                        <div class="widget__title card__header card__header--has-btn">
-                           <div class="widget_title1">
-                              <h4>Services</h4>
-                           </div>
-                        </div>
-                        <marquee scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()" direction = "up" style="height:350px;overflow:hidden;">
-                          <div class="widget__content card__content widget_list">
-                             @foreach ($featuredGigs as $featuredGig)
-                               <div class="side-category-item">
-                                  <p style="margin:0px;"><a href="{{route('services.show', ['id'=>$featuredGig->id, 'userID'=>$featuredGig->user->id])}}"><b>{{$featuredGig->service_title}}</b></a></p>
-                                  <h5> <span class="label label-primary pull-right">Featured</span> <span class="label label-danger pull-right">Price: {{$featuredGig->price}}  {{$gs->base_curr_symbol}}</span></h5>
-                               </div>
-                             @endforeach
-                          </div>
-                        </marquee>
-                     </div>
+
 
                       {{-- All the categories created by admin --}}
                       <div class="widget-content">

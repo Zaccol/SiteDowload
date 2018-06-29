@@ -58,11 +58,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put('/updatePassword', 'Users\ProfileController@updatePassword')->name('updatePassword');
 
 	Route::get('/service/create', 'Users\ServiceController@create')->name('services.create');
-	Route::post('/service/store', 'Users\ServiceController@store')->name('services.store');
-	Route::get('/services/index', 'Users\ServiceController@index')->name('services.index');
-	Route::post('/services/statusUpdate', 'Users\ServiceController@statusUpdate')->name('services.statusUpdate');
-	Route::get('/services/edit/{service}', 'Users\ServiceController@edit')->name('services.edit');
-	Route::post('/services/update', 'Users\ServiceController@update')->name('services.update');
+    Route::post('/service/store', 'Users\ServiceController@store')->name('services.store');
+    Route::get('/services/index', 'Users\ServiceController@index')->name('services.index');
+    Route::post('/services/statusUpdate', 'Users\ServiceController@statusUpdate')->name('services.statusUpdate');
+    Route::get('/services/edit/{service}', 'Users\ServiceController@edit')->name('services.edit');
+    Route::post('/services/update', 'Users\ServiceController@update')->name('services.update');
 
 
 

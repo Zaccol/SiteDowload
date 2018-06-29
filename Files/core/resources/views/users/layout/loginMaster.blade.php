@@ -106,11 +106,11 @@
                      @auth
                      <li>
                         <a class="page-scroll" href="#">
-                        Buyer <i class="fa fa-angle-down"></i>
+                        Contrats <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-2">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('buyer.myShopping')}}">My Shopping</a>
+                              <a class="page-scroll" href="{{route('buyer.myShopping')}}">Mes achats</a>
                            </li>
                         </ul>
                      </li>
@@ -328,7 +328,15 @@
       <script src="{{asset('assets/users/js/marquee.js')}}"></script>
       <!--Main js file load-->
       <script src="{{asset('assets/js/main.js')}}"></script>
+      <script>
+         var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
+         hljs.initHighlightingOnLoad();
+         hljs.configure({useBR: true});
+         jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
+         jQuery('#raindrops-green').raindrops({color:'#2ecc71 ',canvasHeight:5});
+
+      </script>
       <script>
          $(document).ready(function() {
 

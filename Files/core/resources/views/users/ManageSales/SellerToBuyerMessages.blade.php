@@ -222,7 +222,7 @@
               <input title="check this before send attachments if you want to submit project" type="checkbox" name="delivery" value="requirement"> Deliver Project
               <label class="btn btn-outline-success" style="cursor:pointer;"><input onchange="submitSellerMessage(event)" id="achImage" name="attachment" style="display:none;" type="file" /><i class="fa fa-paperclip" aria-hidden="true" style="font-size:20px;"></i></label>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-SELL">
               <input type="submit" class="btn btn-success pull-right" name="" value="send">
             </div>
           </div>

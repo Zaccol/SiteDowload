@@ -53,35 +53,7 @@
    </head>
    <body  data-spy="scroll">
       <!-- End Preload -->
-      <div class="animation-element">
-         <!-- End Pre-Loader -->
-         <!--support bar  top start-->
-         <div class="support-bar-top wow slideInLeft" data-wow-duration="2s" id="raindrops-green">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                    <div class="contact-info">
-                       <span style="color:white;margin-right:10px;"><i class="fa fa-envelope email" aria-hidden="true"></i> {{$gs->email}}</span>
-                       <span style="color:white;"><i class="fa fa-phone" aria-hidden="true"></i> {{$gs->phone}}</span>
-                    </div>
-                  </div>
-                  <div class="col-md-6 text-right bounceIn">
-                     <div class="contact-admin">
-                        @guest
-                        <a href="{{route('login')}}"><i class="fa fa-user"></i> LOGIN </a>
-                        <a href="{{route('register')}}"><i class="fa fa-user-plus"></i> REGISTER</a>
-                        @endguest
-                        <div class="support-bar-social-links">
-                          @foreach ($socials as $social)
-                            <a href="{{$social->url}}"><i class="fa fa-{{$social->fontawesome_code}}" aria-hidden="true"></i></a>
-                          @endforeach
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
       <!--support bar  top end-->
       <!--main menu section start-->
       <nav class="main-menu wow slideInRight" data-wow-duration="2s">
@@ -101,7 +73,7 @@
 
                <div class="col-md-5 text-right">
                   <ul id="header-menu" class="header-navigation">
-                     <li><a href="{{route('users.home')}}">Home</a></li>
+
                      {{-- <li><a href="{{route('inbox')}}">Inbox</a></li> --}}
                      @auth
                      <li>
@@ -135,14 +107,14 @@
                         {{Auth::user()->username}} <i class="fa fa-angle-down"></i>
                         @endauth
                         @guest
-                        Account <i class="fa fa-angle-down"></i>
+                        Comptes <i class="fa fa-angle-down"></i>
                         @endguest
                         </a>
                         @guest
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('login')}}">Login</a>
-                              <a class="page-scroll" href="{{route('register')}}">Register</a>
+                              <a class="page-scroll" href="{{route('login')}}">connexion</a>
+                              <a class="page-scroll" href="{{route('register')}}">inscription</a>
                            </li>
                         </ul>
                         @endguest
@@ -202,75 +174,13 @@
       <!-- Online Section End -->
       <div class="clearfix"></div>
       <div class="clearfix"></div>
-      <!--payment method section start-->
-      <section class="client-section client-section1 section-padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="section-header wow zoomInDown" data-wow-duration="2s">
-                     <h2>PAYMENT <span> WE ACCEPT</span></h2>
-                     <p><img src="{{asset('assets/users/interfaceControl/logoIcon/icon.jpg')}}" alt="icon"></p>
-                  </div>
-                  <!-- section-heading -->
-                  <div class="section-wrapper">
-                     <div class="client-list">
-                        <!-- Swiper -->
-                        <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel">
 
-                            <div class="carousel-inner">
-                              @foreach ($gateways as $gateway)
-                                @if ($loop->first)
-                                <div class="item active">
-                                    <div class="col-sm-2 col-xs-12">
-                                      <img src="{{asset('assets/users/img/gateway/' . $gateway->gateimg)}}" alt="">
-                                    </div>
-                                </div>
-                                @else
-                                <div class="item">
-                                    <div class="col-sm-2 col-xs-12">
-                                      <img src="{{asset('assets/users/img/gateway/' . $gateway->gateimg)}}" alt="">
-                                    </div>
-                                </div>
-                                @endif
-                              @endforeach
-                            </div>
-
-                            <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a class="right carousel-control" href="#fruitscarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-
-                        </div>
-                        <!-- client container -->
-                     </div>
-                     <!-- client list-->
-                  </div>
-                  <!-- swiper wrapper -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </section>
       <!--end payment method section start-->
       <!--footer area start-->
       <footer id="contact" class="footer-area">
          <!--footer area start-->
          <div class="footer-bottom">
-            <div class="footer-support-bar">
-               <!-- Footer Support List Start -->
-               <div class="footer-support-list">
-                  <ul>
-                    @foreach ($supports as $support)
-                      <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="1s">
-                         <div class="footer-thumb"><i class="fa fa-{{$support->fontawesome_code}}"></i></div>
-                         <div class="footer-content">
-                            <p>{{$support->title}}</p>
-                         </div>
-                      </li>
-                    @endforeach
-                  </ul>
-               </div>
-               <!-- Footer Support End -->
-            </div>
+
             <div class="container">
                <div class="row">
                   <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-duration="3s">

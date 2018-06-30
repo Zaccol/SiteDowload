@@ -69,7 +69,6 @@
 
                <div class="col-md-9 text-right">
                   <ul id="header-menu" class="header-navigation buyer-dropdown">
-                     <li><a href="{{route('users.home')}}">Home</a></li>
                      {{-- <li><a href="{{route('inbox')}}">Inbox</a></li> --}}
                      @auth
                      <li>
@@ -330,53 +329,7 @@
       <div class="clearfix"></div>
       <div class="clearfix"></div>
       <!--payment method section start-->
-      <section class="client-section client-section1 section-padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="section-header wow zoomInDown" data-wow-duration="2s">
-                     <h2>PAYMENT <span> WE ACCEPT</span></h2>
-                     <p><img src="{{asset('assets/users/interfaceControl/logoIcon/icon.jpg')}}" alt="icon"></p>
-                  </div>
-                  <!-- section-heading -->
-                  <div class="section-wrapper">
-                     <div class="client-list">
-                        <!-- Swiper -->
-                        <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="fruitscarousel">
 
-                            <div class="carousel-inner">
-                              @foreach ($gateways as $gateway)
-                                @if ($loop->first)
-                                <div class="item active">
-                                    <div class="col-sm-2 col-xs-12">
-                                      <img src="{{asset('assets/users/img/gateway/' . $gateway->gateimg)}}" alt="">
-                                    </div>
-                                </div>
-                                @else
-                                <div class="item">
-                                    <div class="col-sm-2 col-xs-12">
-                                      <img src="{{asset('assets/users/img/gateway/' . $gateway->gateimg)}}" alt="">
-                                    </div>
-                                </div>
-                                @endif
-                              @endforeach
-                            </div>
-
-                            <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a class="right carousel-control" href="#fruitscarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-
-                        </div>
-                        <!-- client container -->
-                     </div>
-                     <!-- client list-->
-                  </div>
-                  <!-- swiper wrapper -->
-               </div>
-            </div>
-            <!-- row -->
-         </div>
-         <!-- container -->
-      </section>
       <!--end payment method section start-->
       <!--footer area start-->
       <footer id="contact" class="footer-area">
@@ -384,18 +337,7 @@
          <div class="footer-bottom">
             <div class="footer-support-bar">
                <!-- Footer Support List Start -->
-               <div class="footer-support-list">
-                  <ul>
-                    @foreach ($supports as $support)
-                      <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="1s">
-                         <div class="footer-thumb"><i class="fa fa-{{$support->fontawesome_code}}"></i></div>
-                         <div class="footer-content">
-                            <p>{{$support->title}}</p>
-                         </div>
-                      </li>
-                    @endforeach
-                  </ul>
-               </div>
+
                <!-- Footer Support End -->
             </div>
             <div class="container">

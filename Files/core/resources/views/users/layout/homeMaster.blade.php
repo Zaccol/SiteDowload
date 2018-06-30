@@ -67,7 +67,7 @@
 
                <div class="col-md-9 text-right">
                   <ul id="header-menu" class="header-navigation">
-                     <li><a href="{{route('users.home')}}">Home</a></li>
+
                      {{-- <li><a href="{{route('inbox')}}">Inbox</a></li> --}}
                      @auth
                      <li>
@@ -107,8 +107,8 @@
                         @guest
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('login')}}">Login</a>
-                              <a class="page-scroll" href="{{route('register')}}">Register</a>
+                              <a class="page-scroll" href="{{route('login')}}">Connexion</a>
+                              <a class="page-scroll" href="{{route('register')}}">Inscription</a>
                            </li>
                         </ul>
                         @endguest
@@ -116,11 +116,11 @@
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
                               <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profile</a>
-                              <a class="page-scroll" href="{{route('addFund')}}">Add Fund</a>
-                              <a class="page-scroll" href="{{route('withdrawMoney')}}">Withdraw Money</a>
-                              <a class="page-scroll" href="{{route('editProfile')}}">Edit Profile</a>
-                              <a class="page-scroll" href="{{route('editPassword')}}">Change Password</a>
-                              <a style="cursor:pointer;" class="page-scroll" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                              <a class="page-scroll" href="{{route('addFund')}}">créditer le compte</a>
+                              <a class="page-scroll" href="{{route('withdrawMoney')}}">récupérer les crédits</a>
+                              <a class="page-scroll" href="{{route('editProfile')}}">éditer le profil</a>
+                              <a class="page-scroll" href="{{route('editPassword')}}">Changer le mot de passe</a>
+                              <a style="cursor:pointer;" class="page-scroll" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deconnexion</a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                  @csrf
                               </form>

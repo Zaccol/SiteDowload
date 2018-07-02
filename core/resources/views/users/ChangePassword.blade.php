@@ -111,7 +111,7 @@
         <div class="col-md-6 col-md-offset-3"> --}}
           <div class="login-admin">
             <div class="login-header">
-              <h2>Change Password</h2>
+              <h2>Changer de mot de passe</h2>
             </div>
             <div class="login-form">
               @if (session()->has('success'))
@@ -122,7 +122,7 @@
               <form action="{{route('updatePassword')}}" method="POST">
                 {{csrf_field()}}
                 @method('PUT')
-                <input type="password" name="old_password" placeholder="Old Password">
+                <input type="password" name="old_password" placeholder="Ancien mot de passe">
                 @if ($errors->has('old_password'))
                     <span style="color:red;">
                         <strong>{{ $errors->first('old_password') }}</strong>
@@ -135,14 +135,14 @@
                     @endif
                 @endif
 
-                <input type="password" name="password" placeholder="New Password">
+                <input type="password" name="password" placeholder="Nouveau Mot de passe">
                 @if ($errors->has('password'))
                     <span style="color:red;">
                         <strong>{{ $errors->first('password') }}</strong>
                     </span>
                 @endif
-                <input type="password" name="password_confirmation" placeholder="Confirm Password">
-                <input class="updateBtn" type="submit" value="Update Password">
+                <input type="password" name="password_confirmation" placeholder="Confirmer Mot de passe">
+                <input class="updateBtn" type="submit" value="Mettre à jour">
               </form>
             </div>
           </div>

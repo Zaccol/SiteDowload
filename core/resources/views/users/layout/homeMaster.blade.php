@@ -7,7 +7,7 @@
       @yield('meta-ajax')
       <title>{{$gs->website_title}} | @yield('title')</title>
       <!--Favicon add-->
-      <link rel="shortcut icon" type="image/png" href="{{asset('assets/users/interfaceControl/logoIcon/icon.jpg')}}">
+      <link rel="shortcut icon" type="image/jpg" href="{{asset('assets/users/interfaceControl/logoIcon/icon.jpg')}}">
       <!--bootstrap Css-->
       <link href="{{asset('assets/users/css/bootstrap.min.css')}}" rel="stylesheet">
       <!--font-awesome Css-->
@@ -115,7 +115,7 @@
                         @auth
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profile</a>
+                              <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profil</a>
                               <a class="page-scroll" href="{{route('addFund')}}">créditer le compte</a>
                               <a class="page-scroll" href="{{route('withdrawMoney')}}">récupérer les crédits</a>
                               <a class="page-scroll" href="{{route('editProfile')}}">éditer le profil</a>
@@ -172,7 +172,7 @@
                                 <h4>Categories</h4>
                              </div>
                           </div>
-                          <div style="height:500px;overflow-y:scroll;" class="widget__content card__content widget_list">
+                          <div class="widget__content card__content widget_list">
                              @foreach ($categories as $category)
                                <div class="side-category-item">
                                   <a href="{{route('users.servicesAccoordingToCat', $category->id)}}"><b>{{$category->name}}</b></a>

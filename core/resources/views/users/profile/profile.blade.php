@@ -28,9 +28,9 @@
 @section('content')
   <div class="content-container">
       <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#services">Services</a></li>
-          <li><a data-toggle="tab" href="#ratings">Ratings</a></li>
-          <li><a data-toggle="tab" href="#comments">Comments</a></li>
+          <li class="active"><a data-toggle="tab" href="#services">Mes annonces</a></li>
+          <li><a data-toggle="tab" href="#ratings">Évaluations</a></li>
+          <li><a data-toggle="tab" href="#comments">Commentaires</a></li>
       </ul>
       <div class="tab-content">
           <div id="services" class="tab-pane fade in active">

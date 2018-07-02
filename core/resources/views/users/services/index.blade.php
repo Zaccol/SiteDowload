@@ -25,18 +25,18 @@
 
 @section('content')
     <div class="content-container table-responsive" id="contentContainer">
-        <h1>Manage Services</h1>
+        <h1>Gérer mes annonces</h1>
         <hr>
         <table class="table ">
           <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Title</th>
+              <th scope="col">Titre</th>
               <th></th>
               <th></th>
               <th></th>
-              <th scope="col">Active Sales</th>
-              <th scope="col">Complete Sales</th>
+              <th scope="col">Annonces active</th>
+              <th scope="col">Annonces complètes</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>

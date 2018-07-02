@@ -1,8 +1,8 @@
-<h3 class="text-center text-warning">Completed Orders</h3>
+<h3 class="text-center text-warning">Contrat vendu</h3>
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Titre</th>
       <th>Description</th>
       <th>Messages</th>
     </tr>

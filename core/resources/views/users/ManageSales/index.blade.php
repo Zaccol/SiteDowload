@@ -6,10 +6,10 @@
 @section('content')
   <div class="shopping-container">
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#completed">Completed Orders <span class="badge">{{\App\Order::where('status', 2)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
-      <li><a data-toggle="tab" href="#corders">Current Orders <span class="badge">{{\App\Order::where('status', 1)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
-      <li><a data-toggle="tab" href="#porders">Pending Orders <span class="badge">{{\App\Order::where('status', 0)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
-      <li><a data-toggle="tab" href="#rejorders">Rejected Orders <span class="badge">{{\App\Order::where('status', -1)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
+      <li class="active"><a data-toggle="tab" href="#completed">Contrats achetés <span class="badge">{{\App\Order::where('status', 2)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
+      <li><a data-toggle="tab" href="#corders">Contrats en cours <span class="badge">{{\App\Order::where('status', 1)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
+      <li><a data-toggle="tab" href="#porders">Contrats en attente <span class="badge">{{\App\Order::where('status', 0)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
+      <li><a data-toggle="tab" href="#rejorders">Contrats rejetés <span class="badge">{{\App\Order::where('status', -1)->where('seller_id', Auth::user()->id)->count()}}</span></a></li>
     </ul>
 
     <div class="tab-content" style="padding-top:20px;">

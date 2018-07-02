@@ -108,7 +108,7 @@
                       <img src="{{asset('assets/users/img/gateway/' . $gateway->gateimg)}}" alt="">
                   </div>
                   <div class="panel-footer">
-                      <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#amountModal{{$gateway->id}}">Select</button>
+                      <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#amountModal{{$gateway->id}}">Choisir</button>
                   </div>
               </div>
           </div>
@@ -120,7 +120,7 @@
                   <div class="modal-content">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Add Fund</h4>
+                          <h4 class="modal-title">Créditer mon compte</h4>
                       </div>
                       <div class="modal-body">
                           <form id="depositFormId" class="" method="post" action="{{route('depositPreview')}}">
@@ -129,14 +129,14 @@
                               <input type="hidden" name="minamo" value="{{$gateway->minamo}}">
                               <input type="hidden" name="maxamo" value="{{$gateway->maxamo}}">
                               <div class="form-group">
-                                  <label for="usr">Amount you want to add to your account:</label>
+                                  <label for="usr">Montant que vous souhaitez ajouter à votre compte:</label>
                                   <div class="input-group">
                                     <input type="text" name="amount" class="form-control" placeholder="">
                                     <span class="input-group-addon">{{$gs->base_curr_text}}</span>
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <input class="btn btn-primary btn-block" type="submit" name="" value="Preview">
+                                  <input class="btn btn-primary btn-block" type="submit" name="" value="Aperçu">
                               </div>
                           </form>
                           <script>
@@ -144,7 +144,7 @@
                           </script>
                       </div>
                       <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                       </div>
                   </div>
 

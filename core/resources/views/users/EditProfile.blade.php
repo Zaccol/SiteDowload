@@ -107,7 +107,7 @@
         <div class="col-md-6 col-md-offset-3"> --}}
           <div class="login-admin">
             <div class="login-header">
-              <h2>Edit Profile</span></h2>
+              <h2>Editer Profil</span></h2>
             </div>
             <div class="login-form">
               @if (session()->has('success'))
@@ -118,9 +118,9 @@
               <form action="{{route('updateProfile')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 @method('PUT')
-                <strong>Profile Picture:</strong><br>
+                <strong>Photo de Profil:</strong><br>
                 <label class="btn btn-success" style="width:200px;cursor:pointer;margin-left:-2px;margin-top:5px;">
-                  <input id="proPic" name="proPic" style="display:none;" type="file" />Choose File
+                  <input id="proPic" name="proPic" style="display:none;" type="file" />Choisir Fichier
                 </label>
                 @if ($errors->has('proPic'))
                     <p>
@@ -130,35 +130,35 @@
                     </p>
                 @endif
                 <br>
-                <strong>First Name:</strong><br>
-                <input type="text" name="firstname" placeholder="Firstname" value="{{$user->firstname}}">
+                <strong>Prénom:</strong><br>
+                <input type="text" name="firstname" placeholder="Prénom" value="{{$user->firstname}}">
                 @if ($errors->has('firstname'))
                     <p style="color:red;">
                         <strong>{{ $errors->first('firstname') }}</strong>
                     </p>
                 @endif
-                <strong>Last Name:</strong><br>
-                <input type="text" name="lastname" placeholder="Lastname" value="{{$user->lastname}}">
+                <strong>Nom:</strong><br>
+                <input type="text" name="lastname" placeholder="Nom" value="{{$user->lastname}}">
                 @if ($errors->has('lastname'))
                     <p style="color:red;">
                         <strong>{{ $errors->first('lastname') }}</strong>
                     </p>
                 @endif
                 <br>
-                <strong>Address:</strong><br>
-                <input type="text" name="address" value="{{$user->address}}" placeholder="Address">
+                <strong>Addresse:</strong><br>
+                <input type="text" name="address" value="{{$user->address}}" placeholder="Addresse">
                 <br>
-                <strong>Zip Code:</strong><br>
-                <input type="text" name="zip" value="{{$user->zip}}" placeholder="Zip Code">
+                <strong>Code postal:</strong><br>
+                <input type="text" name="zip" value="{{$user->zip}}" placeholder="Code postal">
                 <br>
-                <strong>Country:</strong><br>
-                <input type="text" name="country" value="{{$user->country}}" placeholder="Country Name">
+                <strong>Pays:</strong><br>
+                <input type="text" name="country" value="{{$user->country}}" placeholder="Pays">
                 @if ($errors->has('country'))
                     <p style="color:red;">
                         <strong>{{ $errors->first('country') }}</strong>
                     </p>
                 @endif
-                <input type="submit" value="UPDATE PROFILE">
+                <input type="submit" value="Mettre à jour">
               </form>
             </div>
           </div>

@@ -1,4 +1,4 @@
-<h3 style="margin-top:10px;">Services</h3>
+<h3 style="margin-top:10px;">Mes annonces</h3>
 <div class="services-container">
   <div class="row">
     @foreach ($services as $service)

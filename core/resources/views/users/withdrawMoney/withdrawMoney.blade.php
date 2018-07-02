@@ -91,10 +91,10 @@
     <table class="table table-bordered ">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Limit/Trx</th>
+          <th>Nom</th>
+          <th>Limite/Trx</th>
           <th>Charge/Trx</th>
-          <th>Process Time</th>
+          <th>Temps de traitement</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -106,7 +106,7 @@
            <td><b>{{$wm->fixed_charge}} </b> + <b>{{$wm->percentage_charge}} % {{$gs->base_curr_text}}</b></td>
            <td><b>{{$wm->process_time}}</b></td>
            <td>
-              <button onclick="showWithdrawMoneyModal({{$wm->id}}, document.getElementById('method{{$wm->id}}').innerHTML)" type="button" class="btn btn-warning">Withdraw Money</button>
+              <button onclick="showWithdrawMoneyModal({{$wm->id}}, document.getElementById('method{{$wm->id}}').innerHTML)" type="button" class="btn btn-warning">Récupérer</button>
            </td>
         </tr>
         @endforeach

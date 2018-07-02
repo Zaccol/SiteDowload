@@ -43,7 +43,7 @@
 
           <div class="login-admin" style="">
             <div class="login-header">
-              <h2 style="">Create a service</span></h2>
+              <h2 style="">Créer une annonce</span></h2>
             </div>
             <div class="login-form">
               @if (session()->has('success'))
@@ -53,20 +53,20 @@
               @endif
               <form onsubmit="storeService(event)" id="storeServiceForm" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                <strong style="">Service Title *</strong><br>
+                <strong style="">Titre *</strong><br>
                 {{-- Service Title... --}}
                 <input style="height:40px;" type="text" name="serviceTitle" placeholder="Service Title" value="">
                 <span class="error-messages" style="color:red;"></span>
                 <br><br>
                 {{-- Price... --}}
-                <strong style="">Price (in {{$gs->base_curr_text}}) *</strong><br>
+                <strong style="">Prix (en {{$gs->base_curr_text}}) *</strong><br>
                 <input style="height:40px;" type="text" name="price" placeholder="Price in {{$gs->base_curr_text}}" value="">
                 <span class="error-messages" style="color:red;"></span>
                 <br><br>
                 {{-- Category... --}}
-                <strong style="">Category *</strong><br>
+                <strong style="">Categories *</strong><br>
                 <select class="" name="category" style="width:100%;height:40px;padding-left:35px;">
-                  <option value="" disabled selected>Select a category</option>
+                  <option value="" disabled selected>Selectionner categorie</option>
                   @foreach ($categories as $category)
                   <option value="{{$category->id}}">{{$category->name}}</option>
                   @endforeach
@@ -74,7 +74,7 @@
                 <span class="error-messages" style="color:red;"></span>
                 <br><br>
                 {{-- Maximum Days to Complete... --}}
-                <strong style="">Maximum Days to Complete *</strong><br>
+                <strong style="">Nombre maximal de jours à compléter *</strong><br>
                 <input style="height:40px;" type="text" name="maxDaysToComplete" placeholder="Maximum Days to Complete" value="">
                 <span class="error-messages" style="color:red;"></span>
                 <br><br>
@@ -89,9 +89,9 @@
                   <input id="serviceImages" name="images[]" style="display:none;" type="file" multiple />Add Images
                 </label>
                 <div class="">
-                  <p style="margin:0px;">[Choose maximum 3 images]</p>
-                  <p style="margin:0px;">[Acceptable Formats: .png, .jpg, .jpeg]</p>
-                  <p style="margin:0px;">[Images will be resized to 760X400]</p>
+                  <p style="margin:0px;">[Maximum 3 images]</p>
+                  <p style="margin:0px;">[Formats acceptés: .png, .jpg, .jpeg]</p>
+                  <p style="margin:0px;">[Les images seront redimensionnées en 760X400]</p>
                 </div>
 
                 <p style="margin:0px;"><span class="error-messages" style="color:red;"></span></p>
@@ -106,7 +106,7 @@
                 </div>
                 {{-- name="tagInput" --}}
                 <input id="tagInput" onkeypress="addTags(event,this.value)" type="text" style="height:40px;width:200px;" placeholder="Tags" value="">
-                <span style="">[You can add maximum 5 tags]</span><br>
+                <span style="">[Vous pouvez ajouter un maximum de 5 tags]</span><br>
                 <span class="error-messages" style="color:red;"></span>
                 <br>
                 {{-- Description... --}}
@@ -115,12 +115,12 @@
                 <span class="error-messages" style="color:red;"></span>
                 <br>
                 {{-- Introductions to Buyer... --}}
-                <strong style="">Introductions to Buyer *</strong><br>
+                <strong style="">Information sur le contrat *</strong><br>
                 <textarea id="introToBuyer" rows="10" style="width:100%;"></textarea>
                 <span class="error-messages" style="color:red;"></span>
                 <br>
                 {{-- Create Button... --}}
-                <input id="createBtn" class="updateBtn" type="submit" name="submit" value="CREATE">
+                <input id="createBtn" class="updateBtn" type="submit" name="submit" value="Envoyer">
               </form>
             </div>
           </div>

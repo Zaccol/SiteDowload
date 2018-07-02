@@ -116,7 +116,7 @@
                         @auth
                         <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
                            <li class="mega-list mega-list1">
-                              <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profile</a>
+                              <a class="page-scroll" href="{{route('users.profile', Auth::user()->id)}}">Profil</a>
                               <a class="page-scroll" href="{{route('addFund')}}">Créditer mon compte</a>
                               <a class="page-scroll" href="{{route('withdrawMoney')}}">Récuperer mes crédits</a>
                               <a class="page-scroll" href="{{route('editProfile')}}">éditer profil</a>
@@ -168,7 +168,7 @@
                                      <div class="">
                                        <div>
                                            <p style="margin:0px;">
-                                             <strong><i class="fa fa-plus" aria-hidden="true"></i> Join Date</strong> {{$user->created_at}}
+                                             <strong><i class="fa fa-plus" aria-hidden="true"></i> Date d'inscription</strong> {{$user->created_at}}
                                            </p>
                                        </div>
                                     </div>
@@ -179,36 +179,36 @@
                                      <div class="">
                                        <div id="balanceID">
                                            <p style="margin:0px;">
-                                             <strong><i class="fa fa-money" aria-hidden="true"></i> Balance</strong> {{$user->balance}} {{$gs->base_curr_symbol}}
+                                             <strong><i class="fa fa-money" aria-hidden="true"></i> Crédit</strong> {{$user->balance}} {{$gs->base_curr_symbol}}
                                            </p>
                                        </div>
                                     </div>
                                    </div>
                               </div>
-                              <div class="panel">
+                              <!-- <div class="panel">
                                    <div class="panel-heading side-events-item">
                                      <div class="">
                                        <div>
                                            <p style="margin:0px;">
-                                             <strong><i class="fa fa-thumbs-o-up"></i> Positive Rating</strong> {{App\Order::where('seller_id', $user->id)->where('like', 1)->count()}}
+                                             <strong><i class="fa fa-thumbs-o-up"></i> Evaluation Positive</strong> {{App\Order::where('seller_id', $user->id)->where('like', 1)->count()}}
                                            </p>
                                        </div>
                                     </div>
                                    </div>
-                              </div>
-                              <div class="panel">
+                              </div> -->
+                              <!-- <div class="panel">
                                    <div class="panel-heading side-events-item">
                                      <div class="">
                                        <div>
                                            <p style="margin:0px;">
-                                             <strong><i class="fa fa-thumbs-o-down"></i> Negative Rating</strong> {{App\Order::where('seller_id', $user->id)->where('like', 0)->count()}}
+                                             <strong><i class="fa fa-thumbs-o-down"></i> Evaluation Negative </strong> {{App\Order::where('seller_id', $user->id)->where('like', 0)->count()}}
                                            </p>
                                        </div>
                                     </div>
                                    </div>
-                              </div>
+                              </div> -->
                               @auth
-                              <div class="panel">
+                              <!-- <div class="panel">
                                    <div class="panel-heading side-events-item">
                                      <div class="">
                                        <div>
@@ -219,7 +219,7 @@
                                        </div>
                                     </div>
                                    </div>
-                              </div>
+                              </div> -->
                               @endauth
                         </div>
                       </div>
@@ -293,7 +293,7 @@
                                <h4>Categories</h4>
                             </div>
                          </div>
-                         <div style="height:500px;overflow-y:scroll;" class="widget__content card__content widget_list categories">
+                         <div class="widget__content card__content widget_list categories">
                             @foreach ($categories as $category)
                               <div class="side-category-item">
                                  <a href="{{route('users.servicesAccoordingToCat', $category->id)}}"><b>{{$category->name}}</b></a>

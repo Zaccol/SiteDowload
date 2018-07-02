@@ -155,7 +155,7 @@
               }
           });
           // console.log(token + ' ' + serviceID);
-          var c = confirm('Are you sure you want to place this order?');
+          var c = confirm('Êtes-vous sûr de vouloir participer à cette annonces?');
 
           if(c == true) {
             $.ajax({

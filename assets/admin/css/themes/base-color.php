@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 header ("Content-Type:text/css");
-$color = "#746EF1"; // Change your Color Here
-$secColor = "#746EE0"; // Change your Color Here
+$color = "#FCDC6B"; // Change your Color Here
+$secColor = "#FF1043"; // Change your Color Here
 
 
 function checkhexcolor($color) {
@@ -16,10 +16,10 @@ if( isset( $_GET[ 'secColor' ] ) AND $_GET[ 'secColor' ] != '' ) {
 }
 
 if( !$color OR !checkhexcolor( $color ) ) {
-    $color = "#746EF1";
+    $color = "#FCDC6B";
 }
 if( !$secColor OR !checkhexcolor( $secColor ) ) {
-    $secColor = "#746EE0";
+    $secColor = "#FF1043";
 }
 
 ?>
@@ -64,4 +64,4 @@ if( !$secColor OR !checkhexcolor( $secColor ) ) {
       background-color: <?php echo $color; ?>;
 }
 r: white;
-}
+} -->

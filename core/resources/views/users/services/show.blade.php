@@ -58,7 +58,7 @@
         @else
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
+           <ol class="carousel-indicators">
               @for ($i=0; $i < count($service->serviceImages); $i++)
                 <li data-target="#carousel-example-generic" data-slide-to="{{$i}}" {{$i==0 ? 'class="active"' : ''}}></li>
               @endfor

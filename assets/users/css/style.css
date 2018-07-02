@@ -276,7 +276,7 @@ a.shop-cart span.hk_cart_item {
     width: 100%;
     z-index: 99;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: #004fa3;
+    background-color: #FFFFFF;
 }
 .main-menu ul {
     padding: 0;
@@ -293,7 +293,7 @@ a.shop-cart span.hk_cart_item {
 
 .main-menu ul li a {
     text-transform: uppercase;
-    color: #fff;
+    color: #FF1043;
     font-size: 14px;
     font-weight: 600;
     transition: .5s;
@@ -519,7 +519,8 @@ a.shop-cart span.hk_cart_item {
 .main-menu ul li .mega-menu .mega-list1 a {
     padding: 15px 9px;
     text-align: center;
-    color: #fff;
+    color: #FF1043;
+    background-color: #FFFFFF;
 }
 
 .mega-menu .mega-list .mega-menu-item .mega-menu-content h5 a {
@@ -2098,7 +2099,7 @@ background-color: #2c3e50;
 }
 
 .footer-area{
-    background: #004fa3;
+    background-color: #FCDC6B !important;
     /*background: #1e003d;*/
     /*padding: 1px;*/
 }
@@ -2111,7 +2112,7 @@ background-color: #2c3e50;
 }
 
 footer.footer-area {
-    color: #fff;
+    color: #FFFFFF;
     overflow: visible !important;
 }
 
@@ -4246,13 +4247,15 @@ color: #4cb050;
 
 }
 .login-admin  input[type="email"], .login-admin input[type="password"], .login-admin input[type="text"]{
-    font-size: 18px;
-    color: #263238;
-    background-color: #ECEFF1;
+    font-size: 15px;
+    color: #000000;
+    line-height: 18px;
+    background-color: #FFFFFF;
     padding: 18px 33px;
     width: 100%;
     border: 1px solid transparent;
     outline: 0;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 26px;
     -webkit-transition: 0.5s;
@@ -4260,6 +4263,7 @@ color: #4cb050;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    border-radius: 25px;
 }
 
 select#country{
@@ -4281,7 +4285,7 @@ select#country{
 .login-admin .login-form input[type="submit"]{
     font-size: 18px;
     color: #fff;
-    background-color: #3498db;
+    background-color: #FF1043;
     padding: 18px 33px;
     width: 100%;
     border: 1px solid transparent;
@@ -4297,13 +4301,20 @@ select#country{
     -o-transition: 0.5s;
     transition: 0.5s;
     margin-bottom: 0px;
+    line-height: 22px;
+    font-weight: 900;
+    border-radius: 28px;
 }
 .login-admin1 .login-form input[type="submit"]{
     margin-bottom: 15px;
     text-transform:  uppercase;
 }
 .login-admin .login-form input[type="submit"]:hover{
-    background-color: #2c3e50;
+    background-color: #FFFFFF;
+    border: 2px solid #FF1043;
+    color: #FF1043;
+    line-height: 22px;
+    font-weight: 900;
     /* text-transform:  uppercase; */
 }
 .login-admin .login-form label{
@@ -6345,7 +6356,7 @@ select#country{
 }
 .widget__title {
     text-transform: uppercase;
-    background-color:#004fa3;
+    background-color: transparent !important;
 }
 
 
@@ -6562,7 +6573,7 @@ select#country{
       margin: 15px 0px;
       background-color: transparent;
       color: #fff;
-      border-bottom: 1px solid #c3f2d7;
+      border-bottom: 1px solid #1C1C1C;
 
     }
     .side-category-item:last-child {
@@ -6571,7 +6582,7 @@ select#country{
     }
     .side-category-item a{
       text-decoration: none;
-      color: #ffffff;
+      color: #1C1C1C;
     }
     .bet-invoice h3{
       font-size: 18px;
@@ -6597,10 +6608,11 @@ select#country{
       font-size: 14px;
       overflow: hidden;
       display: block;
+      color: #1C1C1C;
     }
     .side-events-item a{
      text-decoration: none;
-     color: #fff;
+     color: #1C1C1C;
      display: block;
     }
     .side-events-item .left{
@@ -6657,7 +6669,7 @@ select#country{
     }
     .panel-group .panel{
       background-color: transparent;
-      border-bottom:1px solid #c3f2d7;
+      border-bottom:1px solid #1C1C1C;
     }
     .panel-group .panel:last-child{
       border-bottom:none;
@@ -6715,20 +6727,18 @@ Content
  */
 
 .bet-section{
-    background-color: #f7f7f7 !important;
+    background-color: #FFFFFF; !important;
     padding:80px 0px;
 }
-.card__header {
+/* .card__header {
     border-radius: 4px 4px 0 0;
     background-color:#004fa3;
     height:60px;
     border-bottom: 2px solid #2ecc71;
-}
+} */
 .widget_title1{
     display: inline-block;
     position: relative;
-
-
 }
 .widget_title1::after{
     content: '';
@@ -6741,23 +6751,21 @@ Content
     border-bottom-style: solid;
     border-right-width: 25px;
     border-right-color: rgba(67,149,57,0) !important;
-    border-right-style: solid;
     border-color: white;
 }
 .widget_title1 h4{
     display: inline-block;
-    background-color: red;
-    color: green;
+    color: #1C1C1C;
     padding:0px 20px;
     min-width: 135px;
     min-height: 60px;
-    padding-top:20px;
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 900;
+    padding-top: 20px;
 }
 .widget-content{
     margin-bottom: 50px;
-   background-color:#004fa3;
+   background-color:#FCDC6B !important;
 }
 .user-bet-footer{
     padding:20px 15px;
@@ -6834,4 +6842,4 @@ aside.right{
 }
 
 .main-menu ul li a:hover {
-  color: white;
+  color: #FF1043;

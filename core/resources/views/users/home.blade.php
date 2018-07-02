@@ -15,6 +15,8 @@
   .service-description {
     color: black;
     padding:0px;
+    font-weight: 200;
+    font-size: 15px;
   }
   .username {
     padding:0px;
@@ -40,23 +42,23 @@
 
 {{-- 1175X500 images --}}
 @section('carousel')
-  <div style="" id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div style="" id="myCarousel"  data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!--<ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol>-->
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+   <div class="carousel-inner">
 
       @foreach ($sliders as $slider)
         <div class="item @if($loop->first) active @endif">
-          <img style="width:100%;" src="{{asset('assets/users/interfaceControl/slider_images/'.$slider->image)}}" alt="Los Angeles" style="width:100%;">
+          <img style="width:100%;" src="{{asset('assets/users/interfaceControl/slider_images/1528485944.jpg')}}" alt="bannieresansnous" style="width:100%;">
           <div class="carousel-caption">
-            <h1 style="color:white;">{{$slider->bold_text}}</h1>
-            <h4 style="color:white;">{{$slider->small_text}}</h4>
+            <!-- <h1 style="color:white;">{{$slider->bold_text}}</h1>
+            <h4 style="color:white;">{{$slider->small_text}}</h4> -->
           </div>
         </div>
       @endforeach
@@ -64,7 +66,7 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+  <!--  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
@@ -72,14 +74,14 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </div>-->
 
 @endsection
 
 @section('content')
   <div class="widget__title card__header card__header--has-btn">
      <div class="widget_title1">
-        <h4>All Services</h4>
+        <h4>Annonces</h4>
      </div>
   </div>
   <br><br>
@@ -97,25 +99,24 @@
         </div>
         <div class="media-body">
           <div class="media-heading-price-container">
-            <h2 class="media-heading"><a href="{{route('services.show', [$service->id, $service->user->id])}}" class="text-primary">{!!(strlen($service->service_title)>40) ? substr($service->service_title, 0, 40) . '...' : $service->service_title!!}</a></h2>
-            <small class="pull-right text-danger"><strong>{{$service->price}} {{$gs->base_curr_symbol}}</strong></small>
+            <h2 class="media-heading"><a href="{{route('services.show', [$service->id, $service->user->id])}}" style="color: #1C1C1C; font-size: 25px;" class="text-primary">{!!(strlen($service->service_title)>40) ? substr($service->service_title, 0, 40) . '...' : $service->service_title!!}</a></h2>
+            <small style="color:#FF1043; font-size: 14px;" class="pull-right text-danger"><strong>{{$service->price}} {{$gs->base_curr_symbol}}</strong></small>
           </div>
           <p style="clear:both;"></p>
           <div class="col-md-12 description-username-container">
             <p class="service-description col-md-10">
               {!!(strlen(strip_tags($service->description))>120) ? substr(strip_tags($service->description), 0, 120) . '...' : strip_tags($service->description)!!}
             </p>
-            <small class="col-md-2 username"><strong><a class="text-danger" href="{{route('users.profile', $service->user->id)}}">{{$service->user->username}}</a></strong></small>
+            <small class="col-md-2 username"><strong><a style="color:#FF1043; font-size: 14px;" class="text-danger" href="{{route('users.profile', $service->user->id)}}">{{$service->user->username}}</a></strong></small>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <button style="margin-right:10px;" class="btn btn-sm btn-primary pull-left" type="button" name="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{count($service->orders()->where('like', 1)->get())}}</button>
-              <button class="btn btn-sm btn-warning pull-left" type="button" name="button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {{count($service->orders()->where('like', 0)->get())}}</button>
+              <!-- <button style="margin-right:10px;" class="btn btn-sm btn-primary pull-left" type="button" name="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{count($service->orders()->where('like', 1)->get())}}</button> -->
+              <!-- <button class="btn btn-sm btn-warning pull-left" type="button" name="button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {{count($service->orders()->where('like', 0)->get())}}</button> -->
             </div>
             <div class="col-md-6">
-              <button class="btn btn-danger btn-sm pull-right" class="pull-right" onclick="placeOrder({{$service->id}})">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                Order Now
+              <button style="background-color:#FF1043; color:#FFFFFF; font-size:14px; font-weight:900; border-radius: 28px; border:none;" class="btn btn-danger btn-sm pull-right" class="pull-right" onclick="placeOrder({{$service->id}})">
+                Réserver
               </button>
             </div>
           </div>
@@ -145,7 +146,7 @@
   @auth
     <script>
         function placeOrder(serviceID) {
-          
+
           var fd = new FormData();
           fd.append('serviceID', serviceID);
           $.ajaxSetup({
